@@ -1,0 +1,672 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    background-color:#141414;
+    font-family: sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 18px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ef0916;
+    cursor: pointer;
+}
+
+li a {
+    text-decoration: none;
+    color: #ffffffd9;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.but a {
+    color: #fff;
+    background-color: #ef0915;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.menu a:hover {
+    background-color: #c70712;
+}
+
+li a:hover {
+    background-color: #ef0915;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.hero {
+    height: 500px;
+    width: 100%;
+}
+
+.feature-banner {
+    height: 450px;
+ max-width: 100%;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url('https://i.pinimg.com/1200x/7a/ae/eb/7aaeeba30f6642e2def16052b2acb4e7.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 100px;
+}
+
+
+.container h1 {
+    margin-bottom: 10px;
+    font-size: 48px;
+    color: #F0F0F0;
+    font-weight: bold;
+    text-shadow:
+
+        0 0 15px rgba(0, 0, 0, 0.8);
+    /* Strong shadow for depth and contrast */
+
+}
+
+.container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 350px;
+    line-height: 1.5;
+    color: #CFCFCF;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.container button {
+    padding: 12px 26px;
+    margin-right: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: center;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+.watchnow {
+    color: white;
+    background-color: #ef0916;
+}
+
+.watchnow:hover {
+    background-color: #c70712;
+}
+
+.watchlist {
+    color: white;
+    background-color: #6d6d6e;
+}
+
+.watchlist:hover {
+    background-color: #7e7e7f;
+}
+
+.card-section {
+    margin-top: 60px;
+    padding: 20px  40px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    /* Align to the start of the padding */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    /* Thickness of the bar */
+    height: 90%;
+    /* Height of the bar */
+    background-color: #ef0915;
+    /* Your AFLIX Red */
+    border-radius: 3px;
+}
+
+.card-row {
+    display: flex;
+    gap: 20px;
+   /* overflow: visible;*/
+   overflow-x: auto;
+  scrollbar-width: none; /* hide scrollbar for Firefox */
+    padding: 20px 0;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+.card-row::-webkit-scrollbar {
+  display: none; /* hides scrollbar */
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 280px;
+    height: auto;
+     min-width: 22%;         /* 4 cards per screen */
+    max-width: 22%;
+    background-color: transparent;
+    padding: 10px;
+      flex: 0 0 calc(25% - 20px);
+    border-radius: 10px;
+    flex: 0 0 auto;        /* IMPORTANT: never shrink, never wrap */
+    scroll-snap-align: start;
+    transition:  transform 0.3s ;
+
+}
+
+    .card-img {
+        height: 160px;
+        background-image: url('https://i.pinimg.com/1200x/23/83/a8/2383a8c84626ef9f1da579d099b60887.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+.card:hover{
+    z-index: 10;
+    transform: scale(1.05); /* Optional: The whole card slightly scales */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the card movement */
+}
+.card:hover .card-img {
+    transform: scale(1.15); /* Zoom the image more dramatically */
+    /* Optional: You can adjust the scale here if 1.15 is too much */
+}
+.card-title {
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-top: 12px;
+
+    padding: 0 6px;
+
+    text-align: left;
+
+}
+
+.card-title:hover{
+            color: #ef0915;
+}
+
+.card-desc {
+
+    color: #b5b5b5;   /* softer gray = cleaner */
+
+    font-size: 13px;
+
+    margin-top: 6px;
+
+    padding: 0 6px;
+
+    line-height: 1.35;
+
+    text-align: left;
+
+}
+
+
+
+.card-info {
+
+    color: #888;      /* slightly darker so rating looks subtle */
+
+    font-size: 13px;
+
+    margin-top: 6px;
+
+    padding: 0 6px;
+
+    text-align: left;
+
+}
+
+.login-title {
+
+    color: white;
+
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+}
+
+/* --- 1. The Immersive Background Banner --- */
+
+.login-section {
+
+    /* Use a strong, branded background image for the entire section */
+
+    background: linear-gradient(to right,  rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+
+                url('https://wallpapers.com/images/high/uncanny-counter-cast-ldpz9oltjs3r79b7.webp') no-repeat center center/cover;
+
+   
+
+    /* Center the login card vertically and horizontally */
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+   
+
+    /* Make the section large and prominent */
+
+    min-height: 500px;
+
+    margin-top: 60px;
+
+    padding: 40px 0;
+
+}
+
+
+
+/* --- 2. The Login Card (The Glassy Element) --- */
+
+.login-card {
+
+    /* This creates the transparent, modern feel */
+
+    background: rgba(255, 255, 255, 0.05); /* Very slight transparency */
+
+    backdrop-filter: blur(10px);
+
+    padding: 40px 35px;
+
+    border-radius: 15px;
+
+    width: 380px; /* Slightly wider for better feel */
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); /* Stronger shadow for depth */
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+
+}
+
+
+
+/* --- 3. Form Details (Kept Clean and Centered) --- */
+
+.login-title {
+
+    font-size: 32px;
+
+    margin-bottom: 30px;
+
+    font-weight: bold;
+
+}
+
+
+
+.login-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+.login-form label {
+
+    color: #ddd;
+
+    margin-bottom: 8px;
+
+    font-size: 16px;
+
+    text-align: left;
+
+}
+
+
+
+.login-form input {
+
+    padding: 15px; /* Increased padding */
+
+    border-radius: 8px;
+
+    border: none;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+
+    background-color: rgba(0, 0, 0, 0.4); /* Darker, less transparent input */
+
+    color: white;
+
+    outline: none;
+
+    border-left: 3px solid #ef0915; /* A small red accent bar */
+
+}
+
+
+
+.login-form input::placeholder {
+
+    color: #bbb;
+
+}
+
+
+
+/* --- 4. Pop-out Button --- */
+
+.login-btn {
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    background-color: #ef0915;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    font-weight: bold;
+
+    box-shadow: 0 4px 15px rgba(239, 9, 21, 0.5); /* Shadow to make it pop */
+
+    margin-top: 10px;
+
+}
+
+
+
+.login-btn:hover {
+
+    background-color: #c40812;
+
+    box-shadow: 0 6px 20px rgba(239, 9, 21, 0.7);
+
+}
+
+
+
+.site-footer {
+
+    background-color: #000; /* black */
+
+    color: #bbb; /* subtle text */
+
+    padding: 30px 40px;
+
+    margin-top: 60px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    border-top: 1px solid #333;
+
+}
+
+
+
+.site-footer a {
+
+    color: #bbb;
+
+    text-decoration: none;
+
+    margin: 0 10px;
+
+    transition: color 0.3s ease;
+
+}
+
+
+
+.site-footer a:hover {
+
+    color: #ef0915; /* red hover like buttons */
+
+}
+
+
+
+.footer-links {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 10px 0 0 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+
+
+
+
+
+
+/* --- RESPONSIVENESS (MEDIA QUERIES) --- */
+
+@media (max-width: 1200px) {
+    /* Large Laptop / Tablet Adjustments */
+    .container {
+        padding-left: 50px; /* Reduced banner padding */
+    }
+
+    /* Card Sizing Adjustment for 3-4 cards per row */
+    .card {
+        min-width: calc(33.33% - 20px); /* Show 3 cards on slightly smaller screens */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablet / Mobile Adjustments */
+
+    /* 1. Navbar: Compact Menu */
+    .navbar {
+        padding: 15px 25px;
+    }
+    .menu {
+        gap: 20px;
+    }
+    .menu li:not(.but) {
+        /* Hide Home, Movies, Tv/Series links */
+        display: none;
+    }
+
+    /* 2. Hero/Banner Section */
+    .hero {
+        height: 400px; /* Reduced height on smaller devices */
+    }
+    .container {
+        padding-left: 25px;
+    }
+    .container h1 {
+        font-size: 36px; /* Smaller main title */
+    }
+    .container p {
+        font-size: 14px;
+        max-width: 80%; /* Let description use more width */
+    }
+    .container button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .feature-banner {
+        height: 350px;
+    }
+
+    /* 3. Card Sections: Stacking and Flow */
+    .card-section {
+        padding: 20px 20px; /* Smaller padding on sides */
+        margin-top: 40px;
+    }
+    .section-title {
+        font-size: 20px; /* Smaller section headings */
+        padding-left: 15px;
+    }
+
+    /* Card Sizing Adjustment for 2-3 cards per row */
+    .card {
+        min-width: calc(33.33% - 20px); /* Default to 3 cards for medium screen */
+        max-width: calc(33.33% - 20px);
+        flex: 0 0 calc(33.33% - 20px);
+    }
+
+    .card-img {
+        height: 120px; /* Smaller card images */
+    }
+    .card-title {
+        font-size: 16px;
+    }
+    .card-desc, .card-info {
+        font-size: 12px;
+    }
+
+
+    /* 4. Login Section */
+    .login-section {
+        min-height: 400px;
+    }
+    .login-card {
+        width: 90%; /* Take up most of the screen width */
+        padding: 30px 20px;
+    }
+    .login-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .login-form input {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .login-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Phone-specific Adjustments */
+    
+    /* Navbar: Ensure logo and login button are not too close */
+    .logo a {
+        font-size: 24px; 
+    }
+    .but a {
+        padding: 6px 12px;
+        font-size: 16px;
+    }
+
+    /* Card Sizing Adjustment for 2 cards per row on small phones */
+    .card {
+        min-width: calc(50% - 15px); /* Show 2 cards on very small screens */
+        max-width: calc(50% - 15px);
+        flex: 0 0 calc(50% - 15px);
+        padding: 8px;
+    }
+    .card-row {
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+    .card-img {
+        height: 100px; 
+    }
+
+    /* Footer adjustments */
+    .site-footer {
+        padding: 20px 20px;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .site-footer p {
+        margin-bottom: 10px;
+    }
+}
